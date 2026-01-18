@@ -1,0 +1,36 @@
+{
+  "project": "LLM-BDD Testing System",
+  "date": "2026-01-18T19:36:38.547841",
+  "requirements": "Users should be able to login, browse products, add items to cart, and complete checkout",
+  "gherkin": "Feature: E-commerce Shopping\n  As a customer\n  I want to purchase products online\n  So that I can shop from home\n\n  @positive @happy\n  Scenario: Successful login and purchase\n    Given I am on the login page\n    When I enter \"standard_user\" as username\n    And I enter \"secret_sauce\" as password\n    And I click the login button\n    Then I should be redirected to the products page\n    And I should see \"Products\" header\n    \n    When I click \"Add to Cart\" on \"Sauce Labs Backpack\"\n    And I click the shopping cart icon\n    And I click \"Checkout\"\n    And I enter \"John\" as first name\n    And I enter \"Doe\" as last name\n    And I enter \"12345\" as zip code\n    And I click \"Continue\"\n    And I click \"Finish\"\n    Then I should see \"Thank you for your order!\"\n    And the order should be completed successfully\n\n  @positive @happy\n  Scenario: Add multiple items to cart\n    Given I am logged in as \"standard_user\"\n    When I add \"Sauce Labs Backpack\" to cart\n    And I add \"Sauce Labs Bike Light\" to cart\n    Then the cart should show 2 items\n    And the cart total should be $55.99\n\n  @negative\n  Scenario: Login with invalid credentials\n    Given I am on the login page\n    When I enter \"invalid_user\" as username\n    And I enter \"wrong_password\" as password\n    And I click the login button\n    Then I should see \"Username and password do not match\" error\n    And I should remain on the login page\n\n  @negative\n  Scenario: Checkout with empty cart\n    Given I am logged in as \"standard_user\"\n    And my shopping cart is empty\n    When I click the shopping cart icon\n    Then the \"Checkout\" button should be disabled\n    And I should see \"Your cart is empty\" message",
+  "summary": {
+    "scenarios_generated": 4,
+    "positive_scenarios": 2,
+    "negative_scenarios": 2,
+    "approved": 2,
+    "executed": 2,
+    "passed": 2,
+    "failed": 0,
+    "success_rate": "100.0%"
+  },
+  "test_results": [
+    {
+      "id": 1,
+      "name": "Successful login and purchase",
+      "status": "PASSED",
+      "time": "3.0s",
+      "steps": 16
+    },
+    {
+      "id": 2,
+      "name": "Add multiple items to cart",
+      "status": "PASSED",
+      "time": "2.4s",
+      "steps": 5
+    }
+  ],
+  "files": [
+    "scenarios_20260118_193633.feature",
+    "approval_20260118_193636.json"
+  ]
+}

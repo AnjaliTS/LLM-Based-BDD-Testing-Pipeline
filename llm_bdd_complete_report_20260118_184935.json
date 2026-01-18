@@ -1,0 +1,142 @@
+{
+  "project": "LLM-BDD Testing System",
+  "timestamp": "2026-01-18T18:49:35.011038",
+  "python_version": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "business_requirements": "Users should be able to login, browse products, add items to cart, and complete checkout",
+  "gherkin_generation": {
+    "feature_file": "generated_scenarios_20260118_184931.feature",
+    "content": "Feature: E-commerce Shopping\n  As a customer\n  I want to purchase products online\n  So that I can shop from home\n\n  @positive @happy\n  Scenario: Successful login and purchase\n    Given I am on the login page\n    When I enter \"standard_user\" as username\n    And I enter \"secret_sauce\" as password\n    And I click the login button\n    Then I should be redirected to the products page\n    And I should see \"Products\" header\n    \n    When I click \"Add to Cart\" on \"Sauce Labs Backpack\"\n    And I click the shopping cart icon\n    And I click \"Checkout\"\n    And I enter \"John\" as first name\n    And I enter \"Doe\" as last name\n    And I enter \"12345\" as zip code\n    And I click \"Continue\"\n    And I click \"Finish\"\n    Then I should see \"Thank you for your order!\"\n    And the order should be completed successfully\n\n  @positive @happy\n  Scenario: Add multiple items to cart\n    Given I am logged in as \"standard_user\"\n    When I add \"Sauce Labs Backpack\" to cart\n    And I add \"Sauce Labs Bike Light\" to cart\n    Then the cart should show 2 items\n    And the cart total should be $55.99\n\n  @negative\n  Scenario: Login with invalid credentials\n    Given I am on the login page\n    When I enter \"invalid_user\" as username\n    And I enter \"wrong_password\" as password\n    And I click the login button\n    Then I should see \"Username and password do not match\" error\n    And I should remain on the login page\n\n  @negative\n  Scenario: Checkout with empty cart\n    Given I am logged in as \"standard_user\"\n    And my shopping cart is empty\n    When I click the shopping cart icon\n    Then the \"Checkout\" button should be disabled\n    And I should see \"Your cart is empty\" message",
+    "parsed_scenarios": [
+      {
+        "name": "Successful login and purchase",
+        "tags": [
+          "@positive",
+          "@happy"
+        ],
+        "type": "positive",
+        "steps": [
+          "Given I am on the login page",
+          "When I enter \"standard_user\" as username",
+          "And I enter \"secret_sauce\" as password",
+          "And I click the login button",
+          "Then I should be redirected to the products page",
+          "And I should see \"Products\" header",
+          "When I click \"Add to Cart\" on \"Sauce Labs Backpack\"",
+          "And I click the shopping cart icon",
+          "And I click \"Checkout\"",
+          "And I enter \"John\" as first name",
+          "And I enter \"Doe\" as last name",
+          "And I enter \"12345\" as zip code",
+          "And I click \"Continue\"",
+          "And I click \"Finish\"",
+          "Then I should see \"Thank you for your order!\"",
+          "And the order should be completed successfully"
+        ]
+      },
+      {
+        "name": "Add multiple items to cart",
+        "tags": [
+          "@negative"
+        ],
+        "type": "negative",
+        "steps": [
+          "Given I am logged in as \"standard_user\"",
+          "When I add \"Sauce Labs Backpack\" to cart",
+          "And I add \"Sauce Labs Bike Light\" to cart",
+          "Then the cart should show 2 items",
+          "And the cart total should be $55.99"
+        ]
+      },
+      {
+        "name": "Login with invalid credentials",
+        "tags": [
+          "@negative"
+        ],
+        "type": "negative",
+        "steps": [
+          "Given I am on the login page",
+          "When I enter \"invalid_user\" as username",
+          "And I enter \"wrong_password\" as password",
+          "And I click the login button",
+          "Then I should see \"Username and password do not match\" error",
+          "And I should remain on the login page"
+        ]
+      },
+      {
+        "name": "Checkout with empty cart",
+        "tags": [
+          "@negative"
+        ],
+        "type": "negative",
+        "steps": [
+          "Given I am logged in as \"standard_user\"",
+          "And my shopping cart is empty",
+          "When I click the shopping cart icon",
+          "Then the \"Checkout\" button should be disabled",
+          "And I should see \"Your cart is empty\" message"
+        ]
+      }
+    ]
+  },
+  "approval": {
+    "approved_scenarios": [
+      {
+        "name": "Successful login and purchase",
+        "tags": [
+          "@positive",
+          "@happy"
+        ],
+        "type": "positive",
+        "steps": [
+          "Given I am on the login page",
+          "When I enter \"standard_user\" as username",
+          "And I enter \"secret_sauce\" as password",
+          "And I click the login button",
+          "Then I should be redirected to the products page",
+          "And I should see \"Products\" header",
+          "When I click \"Add to Cart\" on \"Sauce Labs Backpack\"",
+          "And I click the shopping cart icon",
+          "And I click \"Checkout\"",
+          "And I enter \"John\" as first name",
+          "And I enter \"Doe\" as last name",
+          "And I enter \"12345\" as zip code",
+          "And I click \"Continue\"",
+          "And I click \"Finish\"",
+          "Then I should see \"Thank you for your order!\"",
+          "And the order should be completed successfully"
+        ]
+      }
+    ],
+    "approval_files": [
+      "approval_record_20260118_184934.json"
+    ]
+  },
+  "execution": {
+    "test_results": [
+      {
+        "id": 1,
+        "name": "Successful login and purchase",
+        "type": "positive",
+        "status": "PASSED",
+        "execution_time": "2.8s",
+        "steps_count": 16,
+        "executed_steps": 16,
+        "details": "Simulated execution completed"
+      }
+    ],
+    "website_tested": "https://www.saucedemo.com (simulated)",
+    "execution_mode": "Simulated"
+  },
+  "summary": {
+    "total_scenarios_generated": 4,
+    "positive_scenarios": 1,
+    "negative_scenarios": 3,
+    "scenarios_approved": 1,
+    "tests_executed": 1,
+    "tests_passed": 1,
+    "tests_failed": 0,
+    "success_rate": "100.0%",
+    "validation": "Manual approval completed",
+    "automation": "Happy path scenarios executed"
+  }
+}

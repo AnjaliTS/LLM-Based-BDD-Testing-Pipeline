@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-01-18T19:24:01.303417",
+  "requirements": "Users should be able to login, browse products, add items to cart, and complete checkout",
+  "total_scenarios": 4,
+  "positive_scenarios": 1,
+  "negative_scenarios": 3,
+  "approved_scenarios": [
+    {
+      "name": "Successful login and purchase",
+      "type": "positive",
+      "tags": [
+        "@positive",
+        "@happy"
+      ],
+      "steps_count": 16
+    }
+  ],
+  "approval_count": 1
+}

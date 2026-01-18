@@ -1,0 +1,37 @@
+{
+  "project": "Complete LLM-BDD Testing System",
+  "timestamp": "2026-01-18T20:06:38.891599",
+  "business_requirements": "Users should be able to login, browse products, add items to cart, and complete checkout",
+  "website_tested": "https://www.saucedemo.com",
+  "gherkin_generation": {
+    "content": "Feature: E-commerce Shopping\n  As a customer\n  I want to purchase products online\n  So that I can shop from home\n\n  @positive @happy\n  Scenario: Successful login\n    Given I am on the login page\n    When I enter \"standard_user\" as username\n    And I enter \"secret_sauce\" as password\n    And I click the login button\n    Then I should be redirected to the products page\n\n  @positive @happy\n  Scenario: Add product to cart\n    Given I am logged in\n    When I add \"Sauce Labs Backpack\" to cart\n    Then the cart should show 1 item\n\n  @negative\n  Scenario: Login with wrong password\n    Given I am on the login page\n    When I enter \"standard_user\" as username\n    And I enter \"wrong_password\" as password\n    And I click the login button\n    Then I should see error message\n\n  @negative\n  Scenario: Checkout with empty cart\n    Given I am logged in\n    And my cart is empty\n    When I try to checkout\n    Then checkout should be disabled",
+    "total_scenarios": 4,
+    "positive_scenarios": 1,
+    "negative_scenarios": 3
+  },
+  "manual_approval": {
+    "approved_scenarios": [
+      "Successful login"
+    ],
+    "approved_count": 1
+  },
+  "test_execution": {
+    "results": [
+      {
+        "id": 1,
+        "name": "Successful login",
+        "status": "PASSED",
+        "time": "2.5s",
+        "type": "real_test"
+      }
+    ],
+    "executed_count": 1,
+    "passed": 1,
+    "failed": 0,
+    "success_rate": "100.0%"
+  },
+  "files_generated": [
+    "approval_20260118_200628.json",
+    "test_1_200638.png"
+  ]
+}

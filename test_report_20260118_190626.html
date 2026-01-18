@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LLM-BDD Test Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { background: #4CAF50; color: white; padding: 20px; border-radius: 10px; }
+        .summary { background: #f5f5f5; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .scenario { border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .passed { background: #d4edda; border-color: #c3e6cb; }
+        .failed { background: #f8d7da; border-color: #f5c6cb; }
+        .stats { display: flex; justify-content: space-around; margin: 20px 0; }
+        .stat-box { text-align: center; padding: 20px; border-radius: 10px; }
+        .positive { background: #d4edda; }
+        .negative { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 LLM-BDD Testing Report</h1>
+        <p>Generated: 2026-01-18 19:06:26</p>
+    </div>
+    
+    <div class="summary">
+        <h2>📊 Summary</h2>
+        <p><strong>Requirements:</strong> Users should login and view products</p>
+        
+        <div class="stats">
+            <div class="stat-box positive">
+                <h3>4</h3>
+                <p>Scenarios Generated</p>
+            </div>
+            <div class="stat-box">
+                <h3>1</h3>
+                <p>Approved</p>
+            </div>
+            <div class="stat-box positive">
+                <h3>100.0%</h3>
+                <p>Success Rate</p>
+            </div>
+        </div>
+    </div>
+    
+    <h2>📋 Test Results</h2>
+
+    <div class="scenario passed">
+        <h3>✅ Successful login and purchase</h3>
+        <p><strong>Status:</strong> PASSED | <strong>Time:</strong> 3.4s</p>
+    </div>
+
+    <h2>📄 Generated Files</h2>
+    <ul>
+        <li>approval_record_20260118_190625.json</li>
+        <li>llm_bdd_complete_report_20260118_190626.json</li>
+    </ul>
+    
+    <div style="margin-top: 40px; padding: 20px; background: #e9ecef; border-radius: 10px;">
+        <h3>System Outputs</h3>
+        <p>✅ Generated Gherkin scenarios (positive & negative flows)</p>
+        <p>✅ Manual approval record</p>
+        <p>✅ Automated execution of happy path scenarios</p>
+        <p>✅ Comprehensive test reports</p>
+    </div>
+</body>
+</html>

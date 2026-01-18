@@ -1,0 +1,57 @@
+{
+  "project": "LLM-BDD Testing System",
+  "python_version": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "timestamp": "2026-01-18 17:28:50",
+  "business_requirements": "Users should be able to login, browse products, add to cart, and checkout",
+  "ai_generated_scenarios": "\n[POSITIVE] Successful User Login\nSteps:\n- Given the user is on the login page\n- When they enter valid username \"standard_user\"\n- And they enter valid password \"secret_sauce\"\n- And they click the login button\n- Then they should be redirected to the products page\n- And they should see the products list\n\n[POSITIVE] Add Product to Cart\nSteps:\n- Given the user is logged into the application\n- When they click \"Add to Cart\" on any product\n- Then the cart icon should show \"1\" item\n- And the product should be added to the cart\n\n[NEGATIVE] Login with Invalid Credentials\nSteps:\n- Given the user is on the login page\n- When they enter invalid username \"wrong_user\"\n- And they enter invalid password \"wrong_pass\"\n- And they click the login button\n- Then they should see an error message\n- And they should remain on the login page\n\n[NEGATIVE] Checkout with Empty Cart\nSteps:\n- Given the user is logged in\n- When their shopping cart is empty\n- And they try to proceed to checkout\n- Then they should see a warning message\n- And checkout should not be allowed\n",
+  "approved_scenarios": [
+    {
+      "name": "Successful User Login",
+      "type": "POSITIVE",
+      "steps": [
+        "- Given the user is on the login page",
+        "- When they enter valid username \"standard_user\"",
+        "- And they enter valid password \"secret_sauce\"",
+        "- And they click the login button",
+        "- Then they should be redirected to the products page",
+        "- And they should see the products list"
+      ]
+    },
+    {
+      "name": "Add Product to Cart",
+      "type": "POSITIVE",
+      "steps": [
+        "- Given the user is logged into the application",
+        "- When they click \"Add to Cart\" on any product",
+        "- Then the cart icon should show \"1\" item",
+        "- And the product should be added to the cart"
+      ]
+    }
+  ],
+  "test_results": [
+    {
+      "id": 1,
+      "name": "Successful User Login",
+      "type": "POSITIVE",
+      "status": "✅ PASSED",
+      "execution_time": "3.3s",
+      "steps_executed": 6
+    },
+    {
+      "id": 2,
+      "name": "Add Product to Cart",
+      "type": "POSITIVE",
+      "status": "✅ PASSED",
+      "execution_time": "2.0s",
+      "steps_executed": 4
+    }
+  ],
+  "summary": {
+    "total_generated": 4,
+    "approved": 2,
+    "executed": 2,
+    "passed": 2,
+    "failed": 0,
+    "success_rate": "100.0%"
+  }
+}

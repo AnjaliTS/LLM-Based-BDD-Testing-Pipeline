@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-18T19:06:25.244828",
+  "requirements": "Users should login and view products",
+  "total_scenarios": 4,
+  "approved_scenarios": [
+    {
+      "name": "Successful login and purchase",
+      "type": "positive",
+      "steps_count": 16
+    }
+  ],
+  "approval_count": 1
+}
